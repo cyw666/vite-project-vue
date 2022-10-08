@@ -40,12 +40,8 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 3000,
     proxy: {
-      '/oss': {
-        target: 'https://app.test.jianying.run/oss/token',
-        changeOrigin: true,
-      },
       '/api': {
-        target: 'http://test.fetalk.tech/sponsor',
+        target: 'https://test.fetalk.tech/thanku',
         changeOrigin: true,
       },
     },
