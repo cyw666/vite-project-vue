@@ -1,0 +1,59 @@
+$--colors: (
+  'primary': (
+    'base': #fdcb6e,
+  ),
+  'success': (
+    'base': #21ba45,
+  ),
+  'warning': (
+    'base': #f2711c,
+  ),
+  'danger': (
+    'base': #db2828,
+  ),
+  'error': (
+    'base': #db2828,
+  ),
+  'info': (
+    'base': #42b8dd,
+  ),
+);
+
+$--text-color: (
+  'primary': #1b1b1c,
+  'regular': #43444d,
+  'secondary': #94a2b3,
+  'placeholder': #d3d3d3,
+);
+
+$--border-color-hover: #c0c4cc;
+
+// You should use them in scss, because we calculate it by sass.
+// comment next lines to use default color
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  // do not use same name, it will override.
+  $colors: $--colors,
+  $text-color: $--text-color,
+  $border-color-hover: $--border-color-hover,
+  $input: (
+    // 'text-color': var(--el-text-color-regular),
+    'border-color': rgba(26, 56, 96, 0.05),
+    // 'border-radius': var(--el-border-radius-base),
+    'bg-color': rgba(26, 56, 96, 0.04),
+    'placeholder-color': #d3d3d3,
+    'hover-border': #c0c4cc,
+    'focus-border': #c0c4cc
+  ),
+  $input-disabled: (
+    // 'fill': var(--el-disabled-bg-color),
+    // 'border': var(--el-disabled-border-color),
+    // 'text-color': var(--el-disabled-text-color),
+    'placeholder-color': #d3d3d3
+  )
+);
+
+// if you want to import all
+// @use "element-plus/theme-chalk/src/index.scss" as *;
+
+// You can comment it to hide debug info.
+// @debug $--colors;
