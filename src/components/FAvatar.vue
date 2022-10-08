@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ElAvatar } from 'element-plus'
 import ErrorImg from '~/assets/logo.svg'
 
 defineProps<{
