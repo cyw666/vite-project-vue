@@ -1,4 +1,4 @@
-import axios, { AxiosError } from 'axios'
+import axios, { type AxiosError } from 'axios'
 import { cloneDeep, omit } from 'lodash-es'
 import storage from 'store'
 import { ElMessage, ElLoading } from 'element-plus'

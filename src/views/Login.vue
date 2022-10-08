@@ -86,7 +86,7 @@ const submitForm = () => {
     if (valid) {
       userStore.Login(form).then(() => {
         ElMessage.success('登录成功')
-        router.push('/center/dashboard')
+        router.push('/')
       })
     } else {
       return false
