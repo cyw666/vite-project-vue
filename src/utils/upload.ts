@@ -13,10 +13,7 @@ import {
 } from 'lodash-es'
 import axios from 'axios'
 import request from '~/api/request'
-// const uploadHost =
-//   window.location.origin.indexOf('app.fetalk.cn') > -1
-//     ? 'https://app.fetalk.cn/oss'
-//     : '/oss/token'
+
 const uploadHost = '/oss/token'
 const store = {
   host: '',
@@ -30,7 +27,7 @@ const store = {
   },
 }
 
-const isExpired = function isExpired(date, period = 1) {
+const isExpired = function isExpired(date: string, period = 1) {
   const target = new Date(date)
 
   return Date.now() >= target.getTime() - period * 60 * 1000
@@ -57,9 +54,12 @@ export function getUploadConfig() {
     return store
   })
 }
+export interface FileBlob {
+  blob: string
+  name?: string
+}
 
-export async function uploadHandler(file) {
-  console.log(file)
+export async function uploadHandler(file: File | FileBlob) {
   try {
     const { host, keyPrefix, assetsPrefix, certificate } =
       await getUploadConfig()
@@ -95,9 +95,4 @@ export async function uploadHandler(file) {
   } catch (error) {
     console.warn(error)
   }
-}
-
-export default function upload(context) {
-  const { file } = context
-  return uploadHandler(file)
 }
