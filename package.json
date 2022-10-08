@@ -1,6 +1,7 @@
 {
-  "name": "vite-project-ts",
+  "name": "vite-project-vue",
   "version": "0.0.0",
+  "description": "Quick start with Vue 3 in Vite.",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",
