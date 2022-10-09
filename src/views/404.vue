@@ -2,8 +2,8 @@
   <div class="not-found-page">
     <h1 class="title">404 Not Found</h1>
     <p>
-      <el-button v-if="showBackBtn" type="text" @click="backto"
-        >返回上一页</el-button
+      <FButton v-if="showBackBtn" type="text" @click="backto"
+        >返回上一页</FButton
       >
     </p>
   </div>
@@ -11,6 +11,7 @@
 
 <script setup lang="ts">
 import { useRoute, useRouter } from 'vue-router'
+import FButton from '../components/FButton.vue'
 const route = useRoute()
 const router = useRouter()
 const showBackBtn = !route.query.nobackbtn
@@ -19,7 +20,7 @@ const backto = () => {
 }
 </script>
 
-<style lang="scss" scoped>
+<style>
 .not-found-page {
   text-align: center;
 }

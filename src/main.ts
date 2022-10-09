@@ -1,8 +1,9 @@
+import 'virtual:svg-icons-register'
 import { createApp } from 'vue'
-import './styles/index.scss'
 import App from './App.vue'
 import router from './router'
 import { setupStore } from './stores'
+import './styles/index.scss'
 
 const app = createApp(App)
 app.use(router)

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Loading } from '@element-plus/icons-vue'
 import type { ButtonHTMLAttributes } from 'vue'
 
 const props = withDefaults(
@@ -56,7 +55,7 @@ const buttonRef = ref(null)
     @click="handleClick"
   >
     <span class="app-button__inner">
-      <el-icon v-if="loading" class="is-loading"><Loading /></el-icon>
+      <!-- <FSvgIcon v-if="loading" class="is-loading" name="logo"> -->
       <slot></slot>
     </span>
   </button>

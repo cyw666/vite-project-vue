@@ -1,9 +1,9 @@
 import currency from 'currency.js'
 
-const CNY = (value) =>
+const CNY = (value: currency.Any) =>
   currency(value, { symbol: '¥', precision: 2, separator: ',' })
 
-function currencyFormat(value) {
+function currencyFormat(value: currency.Any) {
   return CNY(value).format()
 }
 

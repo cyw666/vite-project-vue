@@ -1,0 +1,16 @@
+// Vitest Snapshot v1
+
+exports[`FSvgIcon > icon color 1`] = `
+DOMWrapper {
+  "isDisabled": [Function],
+  "wrapperElement": <svg
+    aria-hidden="true"
+    class="f-svg-icon"
+    style="font-size: 16px; color: rgb(51, 51, 51);"
+  >
+    <use
+      xlink:href="#icon-logo"
+    />
+  </svg>,
+}
+`;

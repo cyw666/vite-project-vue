@@ -7,26 +7,10 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    ElAside: typeof import('element-plus/es')['ElAside']
-    ElAvatar: typeof import('element-plus/es')['ElAvatar']
-    ElButton: typeof import('element-plus/es')['ElButton']
-    ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
-    ElContainer: typeof import('element-plus/es')['ElContainer']
-    ElDivider: typeof import('element-plus/es')['ElDivider']
-    ElForm: typeof import('element-plus/es')['ElForm']
-    ElFormItem: typeof import('element-plus/es')['ElFormItem']
-    ElIcon: typeof import('element-plus/es')['ElIcon']
-    ElInput: typeof import('element-plus/es')['ElInput']
-    ElMain: typeof import('element-plus/es')['ElMain']
-    ElUpload: typeof import('element-plus/es')['ElUpload']
-    FAvatar: typeof import('./../src/components/FAvatar.vue')['default']
     FButton: typeof import('./../src/components/FButton.vue')['default']
     FButtonGroup: typeof import('./../src/components/FButtonGroup.vue')['default']
-    FCodeInput: typeof import('./../src/components/FCodeInput.vue')['default']
-    FEmpty: typeof import('./../src/components/FEmpty.vue')['default']
-    FIcon: typeof import('./../src/components/FIcon.vue')['default']
-    FLogo: typeof import('./../src/components/FLogo.vue')['default']
-    FUpload: typeof import('./../src/components/FUpload.vue')['default']
+    Flogo: typeof import('./../src/components/Flogo.vue')['default']
+    FSvgIcon: typeof import('./../src/components/FSvgIcon.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

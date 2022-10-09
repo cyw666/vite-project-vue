@@ -23,9 +23,9 @@
       "node",
       "vitest",
       "vite/client",
-      "element-plus/global",
       "lodash-es",
-      "store"
+      "store",
+      "vite-plugin-svg-icons/client",
     ]
   }
 }

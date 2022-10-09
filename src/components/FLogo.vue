@@ -1,3 +1,13 @@
+<template>
+  <img class="f-logo" :src="Logo" d :style="logoStyle" alt="赞赞" />
+</template>
+
+<script lang="ts">
+export default {
+  name: 'FLogo',
+}
+</script>
+
 <script setup lang="ts">
 import Logo from '~/assets/logo.svg'
 const props = defineProps<{
@@ -14,11 +24,7 @@ const logoStyle = computed(() => {
 })
 </script>
 
-<template>
-  <img class="f-logo" :src="Logo" d :style="logoStyle" alt="赞赞" />
-</template>
-
-<style lang="scss" scoped>
+<style>
 .f-logo {
   width: 38px;
   height: 38px;

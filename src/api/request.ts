@@ -1,7 +1,7 @@
 import axios, { type AxiosError } from 'axios'
 import { cloneDeep, omit } from 'lodash-es'
 import storage from 'store'
-import { ElMessage, ElLoading } from 'element-plus'
+// import { ElMessage, ElLoading } from 'element-plus'
 import { ACCESS_TOKEN } from '~/stores/mutation-types'
 import { deleteEmpty } from '~/utils'
 import router from '~/router'
@@ -28,13 +28,13 @@ const errorHandler = (error: AxiosError<ErrorResponseData>) => {
   if (error.response) {
     const data = error.response.data
     if (error.response.status === 403) {
-      ElMessage.error(data.message || '访问受限')
+      // ElMessage.error(data.message || '访问受限')
     } else if (error.response.status === 401) {
-      ElMessage.error('请重新登录')
+      // ElMessage.error('请重新登录')
       useUserStore().Logout()
       router.push('/user/login')
     } else {
-      ElMessage.error(data.message)
+      // ElMessage.error(data.message)
     }
     return Promise.reject(data)
   }
@@ -44,7 +44,7 @@ const errorHandler = (error: AxiosError<ErrorResponseData>) => {
 // request interceptor
 request.interceptors.request.use((config) => {
   if (!config.params || config.params.loading !== false) {
-    loadingInstance = ElLoading.service()
+    // loadingInstance = ElLoading.service()
   }
   const token = storage.get(ACCESS_TOKEN)
   const params = cloneDeep(omit(config.params, 'loading'))

@@ -14,7 +14,7 @@ Quick start with Vue 3 in Vite.
 
 - 🎉 Use [Pina](https://pinia.vuejs.org/) for vue store
 
-- 🎨 [Element Plus](https://element-plus.gitee.io/) a Vue 3 based component library for designers and developers
+- 🎨 [Tailwind CSS](https://tailwindcss.com/) Rapidly build modern websites without ever leaving your HTML.
 
 - 🌐 [Axios](https://axios-http.com/) Promise based HTTP client for the browser and node.js
 

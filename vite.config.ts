@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 export default defineConfig({
   base: process.env.BASE_URL || '/',
@@ -19,21 +19,21 @@ export default defineConfig({
       imports: ['vue', 'vue-router', '@vueuse/core', '@vueuse/head'],
       dts: 'types/auto-imports.d.ts',
       dirs: ['src/composables'],
-      resolvers: [ElementPlusResolver()],
       eslintrc: {
         enabled: true,
       },
     }),
     Components({
+      dirs: ['src/components'],
       extensions: ['vue'],
       include: [/\.vue$/, /\.vue\?vue/],
       dts: 'types/components.d.ts',
-      resolvers: [
-        // 自动导入 Element Plus 组件
-        ElementPlusResolver({
-          importStyle: 'sass',
-        }),
-      ],
+    }),
+    createSvgIconsPlugin({
+      // 指定需要缓存的图标文件夹
+      iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
+      // 指定symbolId格式
+      symbolId: 'icon-[dir]-[name]',
     }),
   ],
   server: {
@@ -43,13 +43,6 @@ export default defineConfig({
       '/api': {
         target: 'https://test.fetalk.tech/thanku',
         changeOrigin: true,
-      },
-    },
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@use "~/styles/element/index.scss" as *;`,
       },
     },
   },

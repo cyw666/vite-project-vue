@@ -1,15 +1,17 @@
 <template>
   <div class="home">
-    <FAvatar />
-    <FUpload />
-    <ElAvatar />
-    <div class="chart" ref="chartRef"></div>
+    <FSvgIcon name="logo" />
+    <FSvgIcon name="arrow-left" size="100" />
+    <div class="p-4 pt-2">
+      <div class="chart" ref="chartRef"></div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 const chartRef = ref<HTMLDivElement>()
 const { setOptions } = useECharts(chartRef)
+
 const initChart = () => {
   setOptions({
     tooltip: {
@@ -63,7 +65,7 @@ const initChart = () => {
 initChart()
 </script>
 
-<style scoped lang="scss">
+<style>
 .chart {
   width: 300px;
   height: 320px;
