@@ -1,4 +1,4 @@
-# vite-project-vue
+# vite-vue
 
 Quick start with Vue 3 in Vite.
 
@@ -31,8 +31,8 @@ Quick start with Vue 3 in Vite.
 If you prefer to do it manually with the cleaner git history
 
 ```bash
-npx degit cyw666/vite-project-vue my-vite-project-vue
-cd my-vite-project-vue
+npx degit cyw666/vite-vue my-vite-vue
+cd my-vite-vue
 pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
 ```
 
