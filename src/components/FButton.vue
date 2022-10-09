@@ -9,7 +9,6 @@ const props = withDefaults(
     round?: boolean
     block?: boolean
     disabled?: boolean
-    nativeType?: ButtonHTMLAttributes['type']
     loading?: boolean
   }>(),
   {
@@ -18,7 +17,6 @@ const props = withDefaults(
     round: false,
     block: false,
     disabled: false,
-    nativeType: 'button',
     loading: false,
   }
 )
@@ -36,7 +34,7 @@ const buttonRef = ref(null)
 </script>
 
 <template>
-  <button
+  <span
     ref="buttonRef"
     class="app-button"
     :class="[
@@ -50,7 +48,6 @@ const buttonRef = ref(null)
       loading ? 'is-loading' : null,
     ]"
     :style="styles"
-    :type="nativeType"
     :disabled="disabled"
     @click="handleClick"
   >
@@ -58,7 +55,7 @@ const buttonRef = ref(null)
       <!-- <FSvgIcon v-if="loading" class="is-loading" name="logo"> -->
       <slot></slot>
     </span>
-  </button>
+  </span>
 </template>
 
 <style lang="scss">
@@ -77,7 +74,7 @@ const buttonRef = ref(null)
   padding: 11px 20px;
   font-size: 16px;
   border-radius: 4px;
-  background: rgba(26, 56, 96, 0.04);
+  background-color: rgba(26, 56, 96, 0.04);
   border: 1px solid rgba(26, 56, 96, 0.05);
   min-width: 120px;
   &:hover {
@@ -127,7 +124,7 @@ const buttonRef = ref(null)
   }
   &--primary {
     color: #721d0f;
-    background: #fdcb6e;
+    background-color: #fdcb6e;
   }
   &--small {
     min-width: 100px;
@@ -147,27 +144,6 @@ const buttonRef = ref(null)
     &:hover {
       cursor: not-allowed !important;
       opacity: 0.6 !important;
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .app-button {
-    padding: 6px 10px;
-    font-size: 14px;
-    min-width: 60px;
-
-    &--small {
-      min-width: 60px;
-      font-size: 12px;
-      border-radius: 4px;
-      padding: 6px 10px;
-    }
-
-    &--large {
-      min-width: 120px;
-      font-size: 14px;
-      padding: 8px 14px;
     }
   }
 }
