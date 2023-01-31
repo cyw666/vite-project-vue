@@ -1,20 +1,20 @@
 <template>
-  <el-container class="user-layout">
-    <el-aside class="user-layout__aside" width="500px">
+  <div class="user-layout">
+    <aside class="user-layout__aside" width="500px">
       <div class="user-layout__top">
         <router-link to="/">
           <p class="layout-header">
-            <FIcon type="logo" class="icon" />
-            <span class="title">面包会有的</span>
+            <FSvgIcon name="logo" class="icon" />
+            <span class="title">标题</span>
           </p>
         </router-link>
         <div class="desc">每一份坚持<br />都值得被鼓励</div>
       </div>
-    </el-aside>
-    <el-main class="user-layout">
+    </aside>
+    <main class="user-layout">
       <router-view />
-    </el-main>
-  </el-container>
+    </main>
+  </div>
 </template>
 <script lang="ts">
 export default {
