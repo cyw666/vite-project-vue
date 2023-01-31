@@ -2,6 +2,7 @@
   <div class="home">
     <FSvgIcon name="logo" />
     <FSvgIcon name="arrow-left" size="100" />
+    <FButton type="primary" loading>Button</FButton>
     <div class="p-4 pt-2">
       <div class="chart" ref="chartRef"></div>
     </div>

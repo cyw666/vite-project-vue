@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ButtonHTMLAttributes } from 'vue'
+// import type { ButtonHTMLAttributes } from 'vue'
 
 const props = withDefaults(
   defineProps<{
@@ -52,8 +52,10 @@ const buttonRef = ref(null)
     @click="handleClick"
   >
     <span class="app-button__inner">
-      <!-- <FSvgIcon v-if="loading" class="is-loading" name="logo"> -->
-      <slot></slot>
+      <FSvgIcon v-if="loading" name="loading" />
+      <span>
+        <slot></slot>
+      </span>
     </span>
   </span>
 </template>
@@ -88,10 +90,10 @@ const buttonRef = ref(null)
     display: flex;
     align-items: center;
     justify-content: center;
-    .svg-icon:first-child {
+    .f-svg-icon:first-child {
       margin-right: 5px;
     }
-    .svg-icon:last-child {
+    .f-svg-icon:last-child {
       margin-left: 5px;
     }
   }
@@ -114,10 +116,10 @@ const buttonRef = ref(null)
       right: -1px;
       bottom: -1px;
       border-radius: inherit;
-      background-color: rgba(255, 255, 255, 0.3);
+      background-color: rgba(255, 255, 255, 0.6);
     }
 
-    .el-icon.is-loading {
+    .f-svg-icon {
       animation: rotating 2s linear infinite;
       margin-right: 6px;
     }
